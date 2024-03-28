@@ -1,0 +1,1 @@
+export const LABEL_CLOCK_DASHBOARD = "Clock Dashboard";
