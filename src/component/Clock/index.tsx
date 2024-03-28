@@ -3,7 +3,6 @@ import { ClockInterface } from "../../interfaces/ClockInterfaces";
 import "./index.css";
 
 function Clock({ timeZone }: ClockInterface) {
-  // console.log("timeZone", timeZone);
   const [time, setTime] = useState(
     new Date(new Date().toLocaleString("en", { timeZone: timeZone }))
   );
@@ -18,8 +17,6 @@ function Clock({ timeZone }: ClockInterface) {
       clearInterval(timerId);
     };
   }, [timeZone]);
-
-  console.log("hours", time.getHours() * 30, (time.getMinutes() / 30) * 15);
 
   return (
     <div className="relative top-36">

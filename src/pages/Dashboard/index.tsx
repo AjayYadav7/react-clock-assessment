@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Clock from "../../component/Clock";
-import "./index.css";
 import { timeZoneInterface } from "../../interfaces/ClockInterfaces";
 import { timeZoneData } from "../../utils/functions";
 import { LABEL_CLOCK_DASHBOARD } from "../../contants/labelConstants";
+import "./index.css";
 
 const Dashboard = () => {
   const [timeZones, setTimeZones] = useState<string[]>([
@@ -11,7 +11,10 @@ const Dashboard = () => {
     "Asia/Tokyo",
   ]);
 
-  const handleTimeZoneChange = (index: number, event: any) => {
+  const handleTimeZoneChange = (
+    index: number,
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const updatedTimeZones = [...timeZones];
     updatedTimeZones[index] = event.target.value;
     setTimeZones([...updatedTimeZones]);
