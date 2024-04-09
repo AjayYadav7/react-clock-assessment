@@ -21,7 +21,7 @@ function Clock({ timeZone }: ClockInterface) {
 
   const handleHourHand = () => {
     if (time.getMinutes() === 0 && time.getSeconds() === 0) {
-      toast.info(`It's ${time.getHours()}:00:00 hour for ${timeZone} `, {
+      toast.info(`It's ${time.getHours()}:00:00 o'clock for ${timeZone} `, {
         toastId: timeZone,
       });
     }
