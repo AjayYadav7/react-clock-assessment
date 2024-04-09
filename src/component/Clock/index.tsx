@@ -20,8 +20,8 @@ function Clock({ timeZone }: ClockInterface) {
   }, [timeZone]);
 
   const handleHourHand = () => {
-    if (time.getMinutes() === 4 && time.getSeconds() === 0) {
-      toast(`It's ${time.getHours()}:00:00 hour for ${timeZone} `, {
+    if (time.getMinutes() === 0 && time.getSeconds() === 0) {
+      toast.info(`It's ${time.getHours()}:00:00 hour for ${timeZone} `, {
         toastId: timeZone,
       });
     }

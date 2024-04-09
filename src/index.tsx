@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
-    <ToastContainer />
+    <ToastContainer autoClose={10000} />
   </React.StrictMode>
 );
 
