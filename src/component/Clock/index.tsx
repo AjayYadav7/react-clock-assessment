@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ClockInterface } from "../../interfaces/ClockInterfaces";
 import "./index.css";
+import { toast } from "react-toastify";
 
 function Clock({ timeZone }: ClockInterface) {
   const [time, setTime] = useState(
@@ -18,15 +19,22 @@ function Clock({ timeZone }: ClockInterface) {
     };
   }, [timeZone]);
 
+  const handleHourHand = () => {
+    if (time.getMinutes() === 4 && time.getSeconds() === 0) {
+      toast(`It's ${time.getHours()}:00:00 hour for ${timeZone} `, {
+        toastId: timeZone,
+      });
+    }
+    return time.getHours() * 30 + (time.getMinutes() / 30) * 15;
+  };
+
   return (
     <div className="relative top-36">
       <div className="clock">
         <div
           className="hour_hand"
           style={{
-            transform: `rotateZ(${
-              time.getHours() * 30 + (time.getMinutes() / 30) * 15
-            }deg)`,
+            transform: `rotateZ(${handleHourHand()}deg)`,
           }}
         />
         <div

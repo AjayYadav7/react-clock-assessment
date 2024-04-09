@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-main-wrapper">
       <div className="dashboard-heading">{LABEL_CLOCK_DASHBOARD}</div>
-      <div className="">
+      <div className="europe-clock-container">
         <Clock timeZone="Europe/London" />
         <div className="clock-label">Europe/UK</div>
       </div>
